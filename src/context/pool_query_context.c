@@ -1846,7 +1846,7 @@ PRESTOGRES_DEST prestogres_send_to_where(Node *node)
 		if (IsA(node, SelectStmt) && !pool_prestogres_has_relation(node))
 		{
 			ereport(DEBUG1, (errmsg("prestogres_send_to_where: no relations")));
-			return PRESTOGRES_EITHER;
+      return PRESTOGRES_PRESTO; // was return PRESTOGRES_EITHER;
 		}
 		/*
 		 * SET SESSION CHARACTERISTICS AS TRANSACTION
